@@ -29,9 +29,9 @@ public class BowFix19 {
 
 	@SubscribeEvent(priority = EventPriority.LOWEST)
 	public void onArrowNock(ArrowNockEvent event) {
-    EntityPlayer player = event.getPlayer();
-    ItemStack stack = player.getHeldItem();
-    if (player.capabilities.isCreativeMode || player.inventory.hasItem(Items.arrow)
+    EntityPlayer player = event.getEntityPlayer();
+    ItemStack stack = event.getBow();
+    if (player.capabilities.isCreativeMode || event.hasAmmo()
         || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0) {
       player.setItemInUse(stack, stack.getItem().getMaxItemUseDuration(stack));
     }
