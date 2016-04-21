@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 		version = "@VERSION@",
 		acceptedMinecraftVersions = "[1.9,1.10)",
 		dependencies = "required-after:Forge@[12.16.0.1859,);",
-		clientSideOnly = true
+		clientSideOnly = false
 )
 public class BowFix19 {
 	@EventHandler
