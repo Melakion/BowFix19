@@ -1,0 +1,16 @@
+[
+{
+  "modid": "BowFix19",
+  "name": "Infinity Bow Fix",
+  "description": "Let Infinity enchanted bows fire without an arrow in inventory.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://github.com/melakion/BowFix19",
+  "updateUrl": "http://minecraft.curseforge.com/projects/bowfix19",
+  "authorList": ["melakion"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
