@@ -14,13 +14,14 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(
+  @Mod(
 		modid = "BowFix19",
 		version = "@VERSION@",
 		acceptedMinecraftVersions = "[1.9,1.10)",
 		dependencies = "required-after:Forge@[12.16.0.1859,);",
 		clientSideOnly = false
-)
+  )
+
 public class BowFix19 {
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
@@ -32,11 +33,9 @@ public class BowFix19 {
     EntityPlayer player = event.getEntityPlayer();
     ItemStack stack = event.getBow();
     if (player.capabilities.isCreativeMode || event.hasAmmo()
-        || EnchantmentHelper.getEnchantmentLevel(Enchantment.infinity.effectId, stack) > 0) {
-      player.setItemInUse(stack, stack.getItem().getMaxItemUseDuration(stack));
+        || EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByLocation("infinity"), stack) > 0) {
+      event.setAction(event.getAction());
     }
 
-    event.result = stack;
-    event.setCanceled(true);
   }
 }
