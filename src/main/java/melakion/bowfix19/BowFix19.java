@@ -34,8 +34,10 @@ public class BowFix19 {
     ItemStack stack = event.getBow();
     if (player.capabilities.isCreativeMode || event.hasAmmo()
         || EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByLocation("infinity"), stack) > 0) {
-      event.setAction(event.getAction());
+      player.setItemInUse(stack, stack.getItem().getMaxItemUseDuration(stack));
     }
 
+    event.result = stack;
+    event.setCanceled(true);
   }
 }
